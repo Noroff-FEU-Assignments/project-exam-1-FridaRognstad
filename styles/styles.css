@@ -3,6 +3,16 @@ html {
   padding: 0;
 }
 
+body {
+  font-family: Roboto, sans-serif, Helvetica;
+  margin: 0;
+}
+
+.logo {
+  width: 200px;
+}
+
+/* Header */
 header {
   background-color: #d0d0c7;
   margin: 0;
@@ -29,12 +39,21 @@ nav {
 .nav-ul li {
   text-decoration: none;
   display: block;
+  padding: 20px;
 }
 
-nav a {
+nav a,
+footer a {
   text-decoration: none;
-  color: #000;
+  color: #555555;
   text-transform: uppercase;
+  font-family: Nunito, Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+nav .active {
+  color: #000;
 }
 
 .hamburger {
@@ -48,16 +67,45 @@ nav a {
   outline: none;
 }
 
-.logo {
-  width: 200px;
-}
-
-.hamburger-icon,
-.search-icon {
+.hamburger-icon {
   width: 20px;
 }
 
+/* footer*/
+
+footer {
+  background-color: #d0d0c7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+footer p {
+  color: #555555;
+}
+
+.footer-section1 {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  margin: 0 5%;
+  align-items: center;
+}
+
+.footer-ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.footer-section1 i {
+  padding: 10px;
+}
+
 @media (min-width: 600px) {
+  /* header */
   .nav-ul {
     display: flex;
     flex-direction: row;
@@ -65,6 +113,11 @@ nav a {
 
   .hamburger {
     display: none;
+  }
+
+  /*footer*/
+  .footer-section1 {
+    flex-direction: row;
   }
 }
 
