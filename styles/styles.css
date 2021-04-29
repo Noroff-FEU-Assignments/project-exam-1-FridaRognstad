@@ -128,6 +128,14 @@ footer p {
 }
 
 /*index*/
+.index-header {
+  padding-bottom: 500px;
+}
+
+.index-main {
+  margin-top: -500px;
+}
+
 .index-heading {
   background-image: url(/images/pexels-lola-russian-2704048.jpg);
   background-size: cover;
@@ -200,13 +208,17 @@ footer p {
 }
 
 /*about*/
+
+.about-header {
+  padding-bottom: 90px;
+}
+
 .about-main {
   display: flex;
   flex-wrap: wrap;
   width: 90%;
-  margin: 30px auto;
+  margin: -90px auto 30px auto;
   justify-content: space-evenly;
-  align-items: center;
 }
 
 .about-main h1 {
@@ -287,6 +299,48 @@ textarea::placeholder {
 /*contact*/
 .contact-heading {
   text-align: center;
+  width: 100%;
+  background-color: #d0d0c7;
+  padding: 30px 0;
+}
+
+.contact-heading h1 {
+  margin-top: 0;
+}
+
+/* search*/
+.search-header {
+  padding-bottom: 80px;
+}
+
+.search-main {
+  width: 50%;
+  margin: -80px auto auto auto;
+}
+
+.search-main form {
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  margin: 60px 0;
+}
+
+.search-main input {
+  border: solid 3px #a99c93;
+  height: 56px;
+  margin-top: 0;
+}
+
+.search-main button {
+  height: 63px;
+  width: 63px;
+  background-color: #a99c93;
+  color: #fff;
+  border: 4px solid #a99c93;
+}
+
+.search-main i {
+  font-size: 30px;
 }
 
 @media (min-width: 600px) {
@@ -312,10 +366,6 @@ textarea::placeholder {
 
   .latest-posts {
     width: 85%;
-  }
-
-  .about-main img {
-    width: 400px;
   }
 
   .contact-about-index {
@@ -344,6 +394,12 @@ textarea::placeholder {
     width: 402px;
   }
 
+  /* about*/
+  .about-main img {
+    width: 400px;
+  }
+
+  /*contact*/
   .contact-form {
     width: 50%;
   }
@@ -357,6 +413,7 @@ textarea::placeholder {
 
   .about-main h1 {
     text-align: unset;
+    margin-bottom: 30px;
   }
 }
 
