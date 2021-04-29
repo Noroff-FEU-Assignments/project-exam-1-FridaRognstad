@@ -38,7 +38,25 @@
       </ul>
     </nav>
     </header>
+
     <main>
+        <section class="contact-heading">
+            <h1>Contact</h1>
+            <p>Here you can send me any questions, comments and requests.</p>
+        </section>
+        
+        <form action="submit" class="contact-form">
+            <input type="text" id="fullName" name="fullName" placeholder="full name"><br>
+            <p class="form-error">Full name must contain more than 5 characters</p>
+
+            <input type="email" id="email" name="email" placeholder="email"><br>
+            <p class="form-error">Please enter a valid email</p>
+            <input type="text" id="subject" name="subject" placeholder="subject"><br>
+            <p class="form-error">Subject must contain more than 15 characters</p>
+            <textarea type="text" id="message" name="message" placeholder="message"></textarea><br>
+            <p class="form-error"> Message must contain more than 25 characters</p><br>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
     </main>
 
     <footer>

@@ -12,6 +12,28 @@ body {
   width: 200px;
 }
 
+h1 {
+  font-family: Lora, serif;
+}
+
+.loader {
+  border: 6px dashed #a99c93;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 4s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* Header */
 header {
   background-color: #d0d0c7;
@@ -79,6 +101,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  padding: 90px 60px;
 }
 
 footer p {
@@ -104,6 +127,168 @@ footer p {
   padding: 10px;
 }
 
+/*index*/
+.index-heading {
+  background-image: url(/images/pexels-lola-russian-2704048.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: block;
+  margin: auto;
+  height: 400px;
+}
+
+.index-main section {
+  margin-bottom: 60px;
+}
+
+.latest-posts {
+  width: 90%;
+  margin: auto;
+}
+
+.contact-about-index {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contact-about-index img {
+  width: 320px;
+}
+
+.about-button,
+.contact-button {
+  height: 150px;
+  width: 320px;
+  font-size: 40px;
+  border: none;
+  color: #fff;
+}
+
+.about-button:hover {
+  height: 152px;
+  width: 322px;
+}
+
+.contact-button:hover {
+  height: 152px;
+  width: 322px;
+}
+
+.about-button {
+  background-color: #a99c93;
+}
+
+.about-button:active {
+  border: solid 4px #a99c93;
+  background-color: transparent;
+  color: #a99c93;
+}
+
+.contact-button {
+  background-color: #c6a999;
+}
+
+.contact-button:active {
+  border: solid 4px #c6a999;
+  background-color: transparent;
+  color: #c6a999;
+}
+
+/*about*/
+.about-main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 30px auto;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.about-main h1 {
+  text-align: center;
+}
+
+.about-main section {
+  margin: 20px;
+}
+
+.about-main img {
+  width: 300px;
+}
+
+/*form*/
+.contact-form {
+  width: 80%;
+  margin: 30px auto;
+}
+
+input {
+  height: 30px;
+}
+
+textarea {
+  height: 100px;
+}
+
+input,
+textarea {
+  width: 100%;
+  border-bottom: solid 3px #a99c93;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-top: 30px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  text-transform: uppercase;
+  font-family: Nunito, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #000;
+  font-weight: 600;
+}
+
+.form-error {
+  color: darkred;
+  border: darkred solid 1.5px;
+  padding: 3px;
+  background-color: lightpink;
+  display: none;
+  font-family: Nunito, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+}
+
+.submit-button {
+  height: 57px;
+  width: 100%;
+  text-transform: uppercase;
+  background-color: #a99c93;
+  border: solid 4px #a99c93;
+  color: #fff;
+  font-weight: 900;
+  margin: 30px auto;
+}
+
+.submit-button:hover {
+  height: 59px;
+}
+
+.submit-button:active {
+  background-color: transparent;
+  color: #a99c93;
+}
+
+/*contact*/
+.contact-heading {
+  text-align: center;
+}
+
 @media (min-width: 600px) {
   /* header */
   .nav-ul {
@@ -119,9 +304,65 @@ footer p {
   .footer-section1 {
     flex-direction: row;
   }
+  /*index*/
+  .index-heading {
+    max-width: 85%;
+    height: 500px;
+  }
+
+  .latest-posts {
+    width: 85%;
+  }
+
+  .about-main img {
+    width: 400px;
+  }
+
+  .contact-about-index {
+    height: 630px;
+    width: 85%;
+  }
+
+  .contact-about-index img {
+    width: 500px;
+  }
+
+  .about-button,
+  .contact-button {
+    height: 200px;
+    width: 400px;
+    font-size: 60px;
+  }
+
+  .about-button:hover {
+    height: 202px;
+    width: 402px;
+  }
+
+  .contact-button:hover {
+    height: 202px;
+    width: 402px;
+  }
+
+  .contact-form {
+    width: 50%;
+  }
 }
 
-/* 
-header: 
-button: #A99C93
-*/
+@media (min-width: 900px) {
+  .about-main {
+    flex-wrap: nowrap;
+    width: 80%;
+  }
+
+  .about-main h1 {
+    text-align: unset;
+  }
+}
+
+@media (min-width: 1300px) {
+  /*index*/
+  .index-heading {
+    height: 665px;
+  }
+}
