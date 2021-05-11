@@ -7,11 +7,15 @@ async function fetchIndexApi(apiUrl) {
     const data = await fetch(apiUrl);
     const json = await data.json();
 
+    indexApiResults.innerHTML = "";
+
     for (let i = 0; i < json.length; i++) {
       indexApiResults.innerHTML += `<div class="blog-results">
+                                    <a href="blog-post.html?id=${json[i].id}">
                                     <img class="blog-image" src="${json[i].featured_image_src.full}">
                                     <p class="date">${json[i].published_on}</p>
                                     <h3>${json[i].title.rendered}</h3>
+                                    </a>
                                     </div>
                                      `;
     }

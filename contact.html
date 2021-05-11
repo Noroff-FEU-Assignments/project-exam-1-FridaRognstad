@@ -46,17 +46,25 @@
         </section>
         
         <form action="submit" class="contact-form">
-            <input type="text" id="fullName" name="fullName" placeholder="full name"><br>
-            <p class="form-error">Full name must contain more than 5 characters</p>
+            <input type="text" id="fullName" name="fullName" placeholder="full name*"><br>
+            <p class="form-error" id="name-error">Full name must contain more than 5 characters</p>
 
-            <input type="email" id="email" name="email" placeholder="email"><br>
-            <p class="form-error">Please enter a valid email</p>
-            <input type="text" id="subject" name="subject" placeholder="subject"><br>
-            <p class="form-error">Subject must contain more than 15 characters</p>
-            <textarea type="text" id="message" name="message" placeholder="message"></textarea><br>
-            <p class="form-error"> Message must contain more than 25 characters</p><br>
+            <input type="email" id="email" name="email" placeholder="email*"><br>
+            <p class="form-error" id="email-error">Please enter a valid email</p>
+
+            <input type="text" id="subject" name="subject" placeholder="subject*"><br>
+            <p class="form-error" id="subject-error">Subject must contain more than 15 characters</p>
+
+            <textarea type="text" id="message" name="message" placeholder="message*"></textarea><br>
+            <p class="form-error" id="message-error"> Message must contain minimum 26 characters</p><br>
+
             <button type="submit" class="submit-button">Submit</button>
         </form>
+
+        <section class="success">
+            <h1>Thank you for getting in touch!</h1>
+            <p>Your message has been successfully sent :)</p>
+        </section>
     </main>
 
     <footer>
@@ -94,6 +102,7 @@
         <p>© 2021 Frida Rognstad</p>
       </section>
     </footer>
-    <script src="/js/script.js"></script>
+    <script src="/js/header.js"></script>
+    <script src="/js/validation.js"></script>
   </body>
 </html>

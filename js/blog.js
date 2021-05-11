@@ -1,6 +1,7 @@
 const blogContainer = document.querySelector(".blog-container");
-const indexBlogContainer = document.querySelector(".latest-posts-container");
-const url = "https://fridarognstad.one/projectexam/wordpress/wp-json/wp/v2";
+const url =
+  "https://fridarognstad.one/projectexam/wordpress/wp-json/wp/v2/posts?per_page=50";
+const olderPostsButton = document.querySelector("#older-posts");
 
 async function fetchBlogPosts() {
   try {
@@ -11,21 +12,44 @@ async function fetchBlogPosts() {
 
     blogContainer.innerHTML = "";
 
-    createHtml(blogPosts);
+    for (let i = 0; i < 9; i++) {
+      blogContainer.innerHTML += `<div class="blog-results">
+      <a href="blog-post.html?id=${blogPosts[i].id}">
+      <img class="blog-image" src="${blogPosts[i].featured_image_src.full}">
+      <p class="date">${blogPosts[i].published_on}</p>
+      <h2>${blogPosts[i].title.rendered}</h2>
+      </a>
+      </div>
+       `;
+    }
   } catch (error) {
     console.log("Could not call the API");
   }
 }
 
-function createHtml(blogPosts) {
-  for (let i = 0; i < blogPosts.length; i++) {
-    blogContainer.innerHTML += `<div class="blog-results">
-                                  <img class="blog-image" src="${blogPosts[i].featured_image_src.full}">
-                                  <p class="date">${blogPosts[i].published_on}</p>
-                                  <h2>${blogPosts[i].title.rendered}</h2>
-                                  </div>
-                                   `;
-  }
-}
+olderPostsButton.addEventListener("click", () => {
+  async function fetchBlogPosts(url) {
+    try {
+      const response = await fetch(url);
+      const blogPosts = await response.json();
 
-fetchBlogPosts();
+      blogContainer.innerHTML = "";
+      olderPostsButton.style.display = "none";
+
+      for (let i = 0; i < 18; i++) {
+        blogContainer.innerHTML += `<div class="blog-results">
+                                    <a href="blog-post.html?id=${blogPosts[i].id}">
+                                    <img class="blog-image" src="${blogPosts[i].featured_image_src.full}">
+                                    <p class="date">${blogPosts[i].published_on}</p>
+                                    <h2>${blogPosts[i].title.rendered}</h2>
+                                    </a></div>
+                                     `;
+      }
+    } catch (error) {
+      console.log("api error");
+    }
+  }
+  fetchBlogPosts(url);
+});
+
+fetchBlogPosts(url);
