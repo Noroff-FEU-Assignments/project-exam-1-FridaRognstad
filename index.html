@@ -17,7 +17,7 @@
   </head>
 
   <body>
-    <header class="index-header">
+    <header class="index-header" id="header">
     <nav>
       <a href="index.html">
         <img src="/images/logo3.png" class="logo" alt="Sarah Oliver logo" /></a>      
@@ -44,35 +44,25 @@
       </section>
 
       <section class="latest-posts">
-        <h2>Latest posts:</h2>
-        <div class="latestposts-container">
-          <div class="carousel">
-            <div class="carousel-slider">
+        <h1>Latest posts:</h1>
+         <div class="arrows">
+              <div class="left arrow"><i class="fas fa-caret-left"></i></div>
               <div class="index-api-results">
                 <div class="loader"></div>
               </div>
-            </div>
-            <div class="arrows">
-              <div class="left arrow"><i class="fas fa-caret-left"></i></div>
               <div class="right arrow"><i class="fas fa-caret-right"></i></div>
-            </div>
-          </div>
         </div>
-      </section>
-
-      <section class="contact-about-index">
-        <a href="about.html"><button class="about-button">About</button></a>
-        <a href="contact.html"><button class="contact-button">Contact</button></a>
+        <a class="more" href="/blog.html">More</a>
       </section>
     </main>
 
     <footer>
       <section class="footer-section1">
         <div class="social-media">
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-facebook-f"></i>
-        <i class="fab fa-pinterest"></i>
-        <i class="fab fa-twitter"></i>
+       <a> <i class="fab fa-instagram"></i></a>
+       <a><i class="fab fa-facebook-f"></i></a>
+       <a><i class="fab fa-pinterest"></i></a>
+       <a><i class="fab fa-twitter"></i></a>
       </div>
 
       <div>
@@ -80,7 +70,9 @@
       </div>
 
       <div class="up-arrow">
+        <a href="#header">
         <i class="fas fa-chevron-up"></i>
+        </a>
         </div>
       </section>
 
@@ -95,9 +87,6 @@
 
       <section class="faded-text">
         <p>This blog is made for a school project. The people and events in this blog is only fictonal.</p>
-      </section>
-
-      <section>
         <p>© 2021 Frida Rognstad</p>
       </section>
     </footer>
