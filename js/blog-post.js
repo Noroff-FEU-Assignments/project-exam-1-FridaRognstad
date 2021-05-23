@@ -9,10 +9,13 @@ const id = params.get("id");
 console.log(id);
 
 const url =
-  "https://fridarognstad.one/projectexam/wordpress/wp-json/wp/v2/posts/" + id;
+  "https://fridarognstad.one/projectexam/wordpress/wp-json/wp/v2/posts/" +
+  id +
+  `?_embed`;
 
 console.log(url);
 
+//fetching the blogpost
 async function fetchPost() {
   try {
     const response = await fetch(url);
@@ -21,13 +24,18 @@ async function fetchPost() {
     console.log(details);
 
     createDetailHtml(details);
+    createTitle(details);
   } catch (error) {
     console.log("Could not call the API");
+    detailContainer.innerHTML = message(
+      "Sorry, something went wrong loading the post :("
+    );
   }
 }
 
 fetchPost();
 
+//create blog-post html and image modal
 function createDetailHtml(details) {
   detailContainer.innerHTML = `<div class="blog-details">
                                 <div class="details-heading">
@@ -35,19 +43,17 @@ function createDetailHtml(details) {
                                 <p class="date">${details.published_on}</p>
                                 </div>
                                 <div class="details-content">
-                                <img id="openModalImage" class="blog-image" src="${details.featured_image_src.full}">
-                                <p>${details.content.rendered}</p>
+                                <img id="openModalImage" class="blogpost-image" alt="${details._embedded["wp:featuredmedia"][0].alt_text}" src="${details._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url}">
+                                <div class="blogpost-content">${details.content.rendered}</div>
                                 </div>
                                 </div>
-
                                 <div class="modal">
                                 <img class="modalImage" src="${details.featured_image_src.full}">
-                                <div class="close">x</div>
+                                <div class="close">&#215;</div>
                                 </div>
                                  `;
   const modal = document.querySelector(".modal");
 
-  // Get the image and insert it inside the modal - use its "alt" text as a caption
   const img = document.querySelector("#openModalImage");
   const modalImg = document.querySelector(".modalImage");
   img.onclick = function () {
@@ -55,10 +61,8 @@ function createDetailHtml(details) {
     modalImg.src = this.src;
   };
 
-  // Get the <span> element that closes the modal
   const close = document.querySelector(".close");
 
-  // When the user clicks on <span> (x), close the modal
   close.onclick = function () {
     modal.style.display = "none";
   };
@@ -70,4 +74,9 @@ function createDetailHtml(details) {
   };
 }
 
-// Get the modal
+// Blog post title
+const blogTitle = document.querySelector(".blog-post-title");
+
+function createTitle(details) {
+  blogTitle.innerHTML = `Sarah Oliver | ${details.title.rendered}`;
+}
