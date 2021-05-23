@@ -13,6 +13,7 @@ const messageError = document.querySelector("#message-error");
 
 const success = document.querySelector(".success");
 
+// checking contactform for errors
 function validateForm(event) {
   event.preventDefault();
 
@@ -51,6 +52,7 @@ function validateForm(event) {
 
 form.addEventListener("submit", validateForm);
 
+//checking length
 function checkLength(value, len) {
   if (value.trim().length >= len) {
     return true;
@@ -59,12 +61,14 @@ function checkLength(value, len) {
   }
 }
 
+//checking email
 function validateEmail(email) {
   const emailRegEx = /\S+@\S+\.\S+/;
   const patternMatchesEmail = emailRegEx.test(email);
   return patternMatchesEmail;
 }
 
+// submit form if correct and display success message
 function submitForm(event) {
   event.preventDefault();
   if (
