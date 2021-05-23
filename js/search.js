@@ -1,6 +1,7 @@
 const searchBar = document.querySelector("#searchbar");
 const searchResults = document.querySelector(".search-results");
 
+//call the api
 async function loadPosts() {
   try {
     const response = await fetch(
@@ -15,6 +16,7 @@ async function loadPosts() {
   }
 }
 
+// create html function
 function displayPosts(posts) {
   const searchHtml = posts.map((post) => {
     return `<li class="search-result-li">
@@ -30,6 +32,7 @@ function displayPosts(posts) {
   searchResults.innerHTML = searchHtml;
 }
 
+// add keyup function to search input and see if it match the letters
 let searchBlogPosts = [];
 
 searchBar.addEventListener("keyup", (letters) => {
