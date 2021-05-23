@@ -154,6 +154,10 @@ nav a {
   font-size: 20px;
 }
 
+nav a:hover {
+  color: #6e615e;
+}
+
 nav .active {
   color: #000;
 }
