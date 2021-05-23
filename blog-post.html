@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
@@ -7,10 +7,10 @@
     />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lora&family=Nunito:wght@400;700&family=Roboto&display=swap" rel="stylesheet"> 
-    <title>Sarah Oliver | Home</title>
+    <title class="blog-post-title"></title>
     <meta
       name="description"
-      content="Welcome to my blog! Here you can read about my life as bloger, photographer, yoga lover and travel addict. I also share tips and recipes for a healthier life, and write about important topics."
+      content="A blog post by Sarah Oliver"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="styles/styles.css" rel="stylesheet" />
@@ -21,11 +21,14 @@
     <nav>
       <a href="index.html">
         <img src="/images/logo3.png" class="logo" alt="Sarah Oliver logo" /></a>      
-        <button class="hamburger" id="hamburger">
+       
+        <button class="hamburger" id="hamburger" aria-label="Open the menu">
           <img
           src="/images/icons/menu.png"
           class="hamburger-icon"
-      /></img></button>
+       aria-hidden="true"></img>
+      </button>
+
       <ul id="nav-ul" class="nav-ul">
         <li><a href="index.html">Home</a></li>
         <li><a href="blog.html" class="active">Blog</a></li>
@@ -40,6 +43,12 @@
     </header>
 
     <main>
+      <section class="breadcrump">
+        <a href="/blog.html">
+          <i class="fas fa-chevron-left"></i>blog
+        </a>
+      </section>
+
         <section class="blog-post-container">
             <div class="loader"></div>
         </section>
@@ -48,19 +57,19 @@
     <footer>
       <section class="footer-section1">
         <div class="social-media">
-            <a> <i class="fab fa-instagram"></i></a>
-            <a><i class="fab fa-facebook-f"></i></a>
-            <a><i class="fab fa-pinterest"></i></a>
-            <a><i class="fab fa-twitter"></i></a>
-      </div>
+          <a aria-label="intragram account" tabindex=0> <i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a aria-label="facebook account" tabindex=0><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a aria-label="pinterest account" tabindex=0><i class="fab fa-pinterest" aria-hidden="true"></i></a>
+          <a aria-label="twitter account" tabindex=0><i class="fab fa-twitter" aria-hidden="true"></i></a>
+    </div>
 
       <div>
         <img src="/images/logo3.png" alt="Sarah Oliver logo" class="logo">
       </div>
 
       <div class="up-arrow">
-        <a href="#header">
-        <i class="fas fa-chevron-up"></i>
+        <a href="#header" aria-label="Back to top">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
         </a>
         </div>
       </section>
@@ -75,7 +84,7 @@
       </section>
 
       <section class="faded-text">
-        <p>This blog is made for a school project. The people and events in this blog is only fictonal.</p>
+        <p>This blog was made for a school project. The people and events in this blog are fictional.</p>
       </section>
 
       <section>
@@ -84,5 +93,7 @@
     </footer>
     <script src="/js/header.js"></script>
     <script src="/js/blog-post.js"></script>
+    <script src="/js/conponents/error.js"></script>
   </body>
 </html>
+
